@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unstuck — Computer Help, in Plain Words</title>
+<meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. One flat price per visit, quoted before I start.">
+<link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
+<meta name="theme-color" content="#FAF6EE">
+
+<!-- Social previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Unstuck">
+<meta property="og:title" content="Unstuck — Computer Help, in Plain Words">
+<meta property="og:description" content="For people who don't speak computer. You describe the problem in your own words, I take it from there.">
+<meta property="og:url" content="https://dillingerstaffing.github.io/unstuck/">
+<meta property="og:image" content="https://dillingerstaffing.github.io/unstuck/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Unstuck: computer help, in plain words.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unstuck — Computer Help, in Plain Words">
+<meta name="twitter:description" content="For people who don't speak computer. You describe the problem in your own words, I take it from there.">
+<meta name="twitter:image" content="https://dillingerstaffing.github.io/unstuck/og-image.png">
+
+<!-- Home screen -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Unstuck">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Unstuck",
+  "description": "Computer help in plain words, for people who don't speak computer.",
+  "url": "https://dillingerstaffing.github.io/unstuck/",
+  "email": "mailto:shipthisgroup@gmail.com",
+  "founder": { "@type": "Person", "name": "Chris Dillinger" },
+  "sameAs": ["https://dillingerstaffing.github.io/portfolio/"]
+}
+</script>
+
+<style>
+:root {
+  --paper: #FAF6EE;
+  --paper-soft: #F3ECDC;
+  --ink: #1B1813;
+  --muted: #6E6659;
+  --line: #E3D9C2;
+  --green: #1E7148;
+  --green-deep: #155A39;
+  --card: #FFFFFF;
+  --radius: 18px;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", Verdana, sans-serif;
+  --font-mono: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--green); color: #fff; }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; gap: 14px; height: 68px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
+.brand-mark {
+  width: 34px; height: 34px; border-radius: 10px; flex: none;
+  background: var(--green); color: var(--paper);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 21px; line-height: 1;
+  padding-top: 1px;
+}
+.brand-name { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.14em; font-size: 0.95rem; }
+.site-nav { margin-left: auto; display: flex; align-items: center; gap: clamp(12px, 2.5vw, 26px); }
+.site-nav a.nav-link { color: var(--muted); text-decoration: none; font-size: 0.98rem; }
+.site-nav a.nav-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 26px; border-radius: 999px;
+  font-family: var(--font-body); font-weight: 700; font-size: 1.02rem;
+  text-decoration: none; cursor: pointer; border: 1px solid transparent;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: #000; }
+.btn-green { background: var(--green); color: #fff; }
+.btn-green:hover { background: var(--green-deep); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-sm { min-height: 42px; padding: 0 20px; font-size: 0.95rem; }
+@media (max-width: 640px) { .site-nav a.nav-link { display: none; } }
+
+/* Hero */
+.hero { padding: clamp(64px, 10vw, 130px) 0 clamp(48px, 7vw, 90px); }
+.eyebrow {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.22em;
+  color: var(--green-deep); text-transform: uppercase; margin: 0 0 22px;
+}
+.hero h1 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.9rem, 7.5vw, 5.4rem);
+  line-height: 1.02; letter-spacing: -0.015em;
+  margin: 0 0 24px; max-width: 14ch;
+}
+.hero h1 .soft { color: var(--muted); }
+.hero p.lede { font-size: clamp(1.15rem, 2.2vw, 1.4rem); color: var(--muted); max-width: 34ch; margin: 0 0 34px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-note { margin-top: 26px; font-size: 0.95rem; color: var(--muted); }
+.hero-note strong { color: var(--ink); }
+
+/* Sections */
+section.block { padding: clamp(48px, 7vw, 96px) 0; border-top: 1px solid var(--line); }
+.kicker {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+h2.section-title {
+  font-family: var(--font-display); font-weight: 800; letter-spacing: -0.01em;
+  font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.08; margin: 0 0 14px; max-width: 20ch;
+}
+.section-sub { color: var(--muted); max-width: 44ch; margin: 0 0 38px; font-size: 1.08rem; }
+
+/* Fix list */
+.fixes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.fixes li {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 8px 28px; align-items: baseline;
+  padding: 20px 6px; border-bottom: 1px solid var(--line);
+  transition: background 0.12s ease;
+}
+.fixes li:hover { background: var(--paper-soft); }
+.fixes strong { font-size: 1.12rem; font-weight: 700; }
+.fixes span { color: var(--muted); }
+@media (max-width: 640px) { .fixes li { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.steps li {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px 26px 30px;
+}
+.steps .n {
+  font-family: var(--font-display); font-weight: 800; font-size: 2.6rem;
+  color: var(--green); line-height: 1; display: block; margin-bottom: 16px;
+}
+.steps h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; margin: 0 0 10px; letter-spacing: -0.005em; }
+.steps p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+
+/* About */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.about p { margin: 0 0 18px; color: var(--muted); }
+.about p strong { color: var(--ink); }
+.about .card {
+  background: var(--ink); color: var(--paper); border-radius: var(--radius);
+  padding: 32px 30px;
+}
+.about .card p { color: #CFC8B8; margin: 0 0 20px; }
+.about .card a { color: var(--paper); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.about .card a:hover { color: #fff; }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact-box {
+  background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px);
+  padding: clamp(30px, 5vw, 56px); text-align: center;
+}
+.contact-box h2 { margin-top: 0; }
+.contact-box > p { color: var(--muted); max-width: 40ch; margin: 0 auto 30px; }
+.chooser { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 18px; }
+.chooser .btn { min-width: 200px; }
+.contact-addr { font-family: var(--font-mono); font-size: 0.95rem; color: var(--muted); margin: 0 0 6px; }
+.contact-note { font-size: 0.95rem; color: var(--muted); margin: 0; min-height: 1.6em; }
+.contact-note.ok { color: var(--green-deep); font-weight: 700; }
+
+/* Footer */
+.site-footer { background: var(--ink); color: #B9B2A2; padding: 56px 0 40px; margin-top: 0; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; justify-content: space-between; }
+.site-footer .brand-name { color: var(--paper); }
+.site-footer p { margin: 6px 0 0; font-size: 0.98rem; max-width: 44ch; }
+.site-footer a { color: var(--paper); text-decoration: underline; text-underline-offset: 4px; }
+.site-footer .fine { width: 100%; margin-top: 28px; padding-top: 20px; border-top: 1px solid #35302A; font-size: 0.85rem; color: #8A8375; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn { transition: none; }
+}
+a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Unstuck home">
+      <span class="brand-mark" aria-hidden="true">U</span>
+      <span class="brand-name">UNSTUCK</span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="nav-link" href="#fixes">What I fix</a>
+      <a class="nav-link" href="#how">How it works</a>
+      <a class="nav-link" href="#who">Who I am</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Get help</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Computer help, in plain words</p>
+      <h1>Stuck with your computer? <span class="soft">I help.</span></h1>
+      <p class="lede">For people who don't speak computer. You describe the problem in your own words, and I take it from there.</p>
+      <div class="hero-cta">
+        <a class="btn btn-green" href="#contact">Get help</a>
+        <a class="btn btn-ghost" href="#fixes">See what I fix</a>
+      </div>
+      <p class="hero-note"><strong>One flat price per visit.</strong> You hear it before I start, and it doesn't change after.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <div class="wrap">
+      <p class="kicker">What I fix</p>
+      <h2 class="section-title">Plain problems, plain fixes.</h2>
+      <p class="section-sub">If yours isn't on the list, describe it any way you like. I've probably seen it.</p>
+      <ul class="fixes">
+        <li class="reveal"><strong>It's slow.</strong><span>I find what's slowing it down and take it off.</span></li>
+        <li class="reveal"><strong>Pop-ups everywhere.</strong><span>I remove them and stop them coming back.</span></li>
+        <li class="reveal"><strong>The Wi-Fi keeps dropping.</strong><span>I sort out the router and the settings.</span></li>
+        <li class="reveal"><strong>New computer.</strong><span>I set it up and move everything over from the old one.</span></li>
+        <li class="reveal"><strong>Photos and files.</strong><span>I back them up, so they're safe.</span></li>
+        <li class="reveal"><strong>That email looks wrong.</strong><span>I check whether it's a scam, and tell you straight.</span></li>
+        <li class="reveal"><strong>The printer won't print.</strong><span>The classic. I fix it.</span></li>
+        <li class="reveal"><strong>Something else.</strong><span>Tell me in your own words. That's what I'm here for.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2 class="section-title">Three steps. No surprises.</h2>
+      <p class="section-sub">This is the whole process, start to finish.</p>
+      <ol class="steps">
+        <li class="reveal">
+          <span class="n" aria-hidden="true">01</span>
+          <h3>Tell me what's wrong.</h3>
+          <p>Use the email button below. "It's slow" is enough. Plain words are fine.</p>
+        </li>
+        <li class="reveal">
+          <span class="n" aria-hidden="true">02</span>
+          <h3>I take a look.</h3>
+          <p>Most things I can fix from my computer to yours. If I need to see it, I come to you.</p>
+        </li>
+        <li class="reveal">
+          <span class="n" aria-hidden="true">03</span>
+          <h3>Fixed, then you pay.</h3>
+          <p>One flat price per visit. You hear the price before I start, and it doesn't change.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="who">
+    <div class="wrap">
+      <p class="kicker">Who I am</p>
+      <h2 class="section-title">I'm Chris.</h2>
+      <div class="about">
+        <div>
+          <p><strong>I work with computers for a living, all the way down to the chips they run on.</strong> This is the simple side of that work: helping people.</p>
+          <p>Nothing you tell me needs to sound technical. If you can point at it and say "that thing bothers me," we're already halfway there.</p>
+        </div>
+        <div class="card reveal">
+          <p>The technical side of my work, operating systems and chip-level engineering, lives on my portfolio.</p>
+          <a href="https://dillingerstaffing.github.io/portfolio/" target="_blank" rel="noopener">See the technical work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <p class="kicker">Get help</p>
+        <h2 class="section-title">Tell me what's wrong.</h2>
+        <p>In your own words. "It's slow" is enough. Pick whichever button suits you.</p>
+        <div class="chooser" role="group" aria-label="Ways to email Chris">
+          <button class="btn btn-green" id="btn-gmail" type="button">Email with Gmail</button>
+          <button class="btn btn-ghost" id="btn-mailapp" type="button">My email app</button>
+          <button class="btn btn-ghost" id="btn-copy" type="button">Copy the address</button>
+        </div>
+        <p class="contact-addr" id="contact-addr">shipthisgroup@gmail.com</p>
+        <p class="contact-note" id="contact-note" role="status">I read every message myself.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <span class="brand-name">UNSTUCK</span>
+      <p>Computer help, in plain words.</p>
+    </div>
+    <div>
+      <p>Technical work: <a href="https://dillingerstaffing.github.io/portfolio/" target="_blank" rel="noopener">Chris Dillinger's portfolio</a></p>
+    </div>
+    <p class="fine">© 2026 Chris Dillinger. This page is plain HTML: no trackers, no pop-ups.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var EMAIL = "shipthisgroup@gmail.com";
+  var SUBJECT = "Computer help";
+  var BODY = "What's happening (plain words are fine):\n\n";
+
+  function gmailURL() {
+    return "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=" + encodeURIComponent(EMAIL) +
+      "&su=" + encodeURIComponent(SUBJECT) +
+      "&body=" + encodeURIComponent(BODY);
+  }
+
+  var note = document.getElementById("contact-note");
+  function say(msg, ok) {
+    note.textContent = msg;
+    note.classList.toggle("ok", !!ok);
+  }
+
+  document.getElementById("btn-gmail").addEventListener("click", function () {
+    window.open(gmailURL(), "_blank", "noopener");
+    say("Opening Gmail with the address and subject filled in.");
+  });
+
+  document.getElementById("btn-mailapp").addEventListener("click", function () {
+    window.location.href = "mailto:" + encodeURIComponent(EMAIL) +
+      "?subject=" + encodeURIComponent(SUBJECT) +
+      "&body=" + encodeURIComponent(BODY);
+  });
+
+  document.getElementById("btn-copy").addEventListener("click", function () {
+    function done() { say("Copied. Paste it into any email.", true); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(EMAIL).then(done, function () {
+        say("Copy this: " + EMAIL);
+      });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = EMAIL;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); }
+      catch (e) { say("Copy this: " + EMAIL); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* Gentle reveal on scroll. */
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

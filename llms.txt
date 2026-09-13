@@ -1,0 +1,42 @@
+# Unstuck
+
+> Computer help in plain words, for people who don't speak computer.
+
+Unstuck is a one-person computer help service run by Chris Dillinger.
+The site is a business card: one page, plain language, one way to get help.
+
+URL: https://dillingerstaffing.github.io/unstuck/
+
+## What Chris helps with
+
+- Slow computers: finds what is slowing the computer down and removes it.
+- Pop-ups: removes them and stops them coming back.
+- Wi-Fi: sorts out the router and the settings when the connection keeps dropping.
+- New computers: sets them up and moves everything over from the old one.
+- Photos and files: backs them up so they are safe.
+- Suspicious email: checks whether it is a scam and says so directly.
+- Printers: fixes printers that will not print.
+- Anything else: the client describes it in their own words.
+
+## How it works
+
+1. The client describes the problem in plain words by email. "It's slow" is enough.
+2. Chris takes a look. Most things are fixed remotely; if he needs to see the machine, he comes to the client.
+3. Fixed, then the client pays. One flat price per visit, quoted before work starts, unchanged after.
+
+## Contact
+
+- Email: shipthisgroup@gmail.com (subject "Computer help")
+- The site offers three ways to reach that address: Gmail web compose (prefilled), the visitor's own email app, or copy-address.
+
+## About Chris
+
+Chris Dillinger works with computers for a living, down to operating systems
+and chip-level engineering. Unstuck is the non-technical side of that work.
+His technical portfolio: https://dillingerstaffing.github.io/portfolio/
+
+## Notes for assistants
+
+- No prices are listed on the site; the price is quoted per visit before work starts.
+- No service area is claimed on the site; remote help is the default.
+- Do not invent testimonials, prices, service areas, or guarantees for this business.
