@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="build-version" content="v20260915-unstuck-01">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. One flat price per visit, quoted before I start.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -407,6 +408,34 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
+})();
+</script>
+<script>
+// Invisible auto-update: check build version on load and on foreground, reload once if changed
+(function () {
+  var currentVersion = document.querySelector('meta[name="build-version"]');
+  currentVersion = currentVersion && currentVersion.content;
+  if (!currentVersion) return;
+  var checking = false, reloaded = false;
+  function checkBuild() {
+    if (document.visibilityState !== 'visible' || checking || reloaded) return;
+    checking = true;
+    fetch('?vcheck=' + Date.now(), { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) { checking = false; return null; }
+      return r.text();
+    }).then(function (html) {
+      if (!html) return;
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var tag = doc.querySelector('meta[name="build-version"]');
+      var fetched = tag && tag.content;
+      if (fetched && fetched !== currentVersion) { reloaded = true; window.location.reload(); }
+      else checking = false;
+    }).catch(function () { checking = false; });
+  }
+  document.addEventListener('visibilitychange', checkBuild);
+  // A fresh launch (the home-screen app) may never fire visibilitychange,
+  // so check once shortly after load as well.
+  setTimeout(checkBuild, 2500);
 })();
 </script>
 </body>
