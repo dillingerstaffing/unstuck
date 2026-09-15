@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. One flat price per visit, quoted before I start.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -83,6 +83,7 @@ body {
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 50;
+  padding-top: env(safe-area-inset-top);
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -201,7 +202,7 @@ h2.section-title {
 .contact-note.ok { color: var(--green-deep); font-weight: 700; }
 
 /* Footer */
-.site-footer { background: var(--ink); color: #B9B2A2; padding: 56px 0 40px; margin-top: 0; }
+.site-footer { background: var(--ink); color: #B9B2A2; padding: 56px 0 calc(40px + env(safe-area-inset-bottom)); margin-top: 0; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; justify-content: space-between; }
 .site-footer .brand-name { color: var(--paper); }
 .site-footer p { margin: 6px 0 0; font-size: 0.98rem; max-width: 44ch; }
