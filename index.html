@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="build-version" content="v20260915-unstuck-02">
+<meta name="build-version" content="v20260915-unstuck-03">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. One flat price per visit, quoted before I start.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -199,6 +199,7 @@ h2.section-title {
 .chooser { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 18px; }
 .chooser .btn { min-width: 200px; }
 .contact-addr { font-family: var(--font-mono); font-size: 0.95rem; color: var(--muted); margin: 0 0 6px; }
+.contact-addr a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .contact-note { font-size: 0.95rem; color: var(--muted); margin: 0; min-height: 1.6em; }
 .contact-note.ok { color: var(--green-deep); font-weight: 700; }
 
@@ -326,7 +327,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline
           <button class="btn btn-ghost" id="btn-mailapp" type="button">My email app</button>
           <button class="btn btn-ghost" id="btn-copy" type="button">Copy the address</button>
         </div>
-        <p class="contact-addr">(609) 568-0485</p>
+        <p class="contact-addr"><a href="tel:+16095680485">(609) 568-0485</a></p>
         <p class="contact-addr" id="contact-addr">shipthisgroup@gmail.com</p>
         <p class="contact-note" id="contact-note" role="status">I read every message myself.</p>
       </div>
