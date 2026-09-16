@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="build-version" content="v20260916-unstuck-06">
+<meta name="build-version" content="v20260916-unstuck-07">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. One flat price per visit, quoted before I start.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -35,7 +35,22 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
+
+<script>
+/* Theme: notebook is the default; a stored visitor choice wins. Runs before
+   the stylesheet is parsed so the first paint is already the right theme. */
+(function () {
+  var t = 'notebook';
+  try {
+    var stored = localStorage.getItem('emi-site-theme');
+    t = stored === 'classic' ? 'classic' : 'notebook';
+  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', t);
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', t === 'classic' ? '#FAF6EE' : '#ece6d5');
+})();
+</script>
 
 <script type="application/ld+json">
 {
@@ -223,6 +238,90 @@ h2.section-title {
   .btn { transition: none; }
 }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+/* ============ Dual theme: notebook (default) / classic ============
+   :root carries the classic design, untouched. The notebook re-voice below
+   applies flat warm paper, committed ink, one sanguine accent for affordances
+   and annotations, hairline rules, serif article type, no texture of any kind. */
+[data-theme="notebook"] {
+  --paper: #ece6d5;
+  --paper-soft: #e3dac2;
+  --ink: #241f17;
+  --muted: #5e5648;
+  --line: #c9bfa4;
+  --green: #8c3f22;
+  --green-deep: #6f3018;
+  --card: #f4efe0;
+}
+html[data-theme="notebook"] { background: #ece6d5; }
+[data-theme="notebook"] body { background: var(--paper); font-family: "Newsreader", Georgia, serif; }
+[data-theme="notebook"] ::selection { background: var(--green); color: #f4efe0; }
+
+/* Tonal transitions on theme switches (both themes). */
+body, .site-header, .btn, .fixes li, .steps li, .about .card, .contact-box, .site-footer, .theme-toggle {
+  transition: background-color .45s ease, color .45s ease, border-color .45s ease;
+}
+
+/* Header: warm paper with a hairline rule. */
+[data-theme="notebook"] .site-header { background: color-mix(in srgb, #ece6d5 90%, transparent); }
+[data-theme="notebook"] .brand-mark { background: var(--ink); color: var(--paper); }
+
+/* Buttons: ink plates on paper; sanguine only on hover. */
+[data-theme="notebook"] .btn-primary, [data-theme="notebook"] .btn-green { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+[data-theme="notebook"] .btn-primary:hover, [data-theme="notebook"] .btn-green:hover,
+[data-theme="notebook"] .btn-primary:focus-visible, [data-theme="notebook"] .btn-green:focus-visible { background: var(--green); border-color: var(--green); color: #fdfaf1; }
+[data-theme="notebook"] .btn-ghost { color: var(--ink); border-color: #a89a76; }
+[data-theme="notebook"] .btn-ghost:hover, [data-theme="notebook"] .btn-ghost:focus-visible { border-color: var(--green); color: var(--green); }
+
+/* Annotations: kickers and the eyebrow become sanguine margin notes. */
+[data-theme="notebook"] .kicker, [data-theme="notebook"] .eyebrow { color: var(--green); }
+
+/* Cards: flat paper plates, hairline borders, soft ink shadows. */
+[data-theme="notebook"] .steps li { border-color: #b3a685; box-shadow: 0 1px 2px rgba(36, 31, 23, .12); }
+[data-theme="notebook"] .steps .n { color: var(--green); }
+[data-theme="notebook"] .about .card { background: #241f17; border: 1px solid #241f17; }
+[data-theme="notebook"] .about .card p { color: #d8d2c0; }
+[data-theme="notebook"] .contact-box { border-color: #b3a685; box-shadow: 0 12px 32px rgba(36, 31, 23, .14); }
+[data-theme="notebook"] .fixes li { border-bottom-color: var(--line); }
+
+/* Footer: committed ink plate. */
+[data-theme="notebook"] .site-footer { background: #241f17; color: #cfc7b3; }
+[data-theme="notebook"] .site-footer .fine { border-top-color: #3a342a; color: #8d8474; }
+[data-theme="notebook"] a:focus-visible, [data-theme="notebook"] button:focus-visible { outline-color: var(--green); }
+
+/* ---- The theme toggle: a quiet folio mark, not a nav link ---- */
+.theme-toggle {
+  flex: 0 0 auto;
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--green); }
+.theme-toggle:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.theme-toggle-mark { display: flex; width: 12px; height: 12px; transition: transform .5s cubic-bezier(.3, .7, .2, 1); }
+.theme-toggle-mark i { display: block; width: 6px; height: 12px; }
+.theme-toggle-mark i:first-child { background: #ece6d5; }
+.theme-toggle-mark i:last-child { background: #241f17; border-left: 1px solid #ece6d5; }
+.theme-toggle.is-flipped .theme-toggle-mark { transform: rotate(180deg); }
+
+/* ---- Theme wipe: a calm radial reveal from the toggle ---- */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) {
+  z-index: 2147483647;
+  clip-path: circle(0px at var(--tx, 50vw) var(--ty, 12px));
+  animation: theme-wipe .7s cubic-bezier(.32, .72, .24, 1) forwards;
+}
+@keyframes theme-wipe {
+  to { clip-path: circle(150vmax at var(--tx, 50vw) var(--ty, 12px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+  .theme-toggle-mark { transition: none; }
+}
 </style>
 </head>
 <body>
@@ -238,6 +337,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline
       <a class="nav-link" href="#how">How it works</a>
       <a class="nav-link" href="#who">Who I am</a>
       <a class="btn btn-primary btn-sm" href="#contact">Get help</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to classic theme" title="Switch theme">
+        <span class="theme-toggle-mark" aria-hidden="true"><i></i><i></i></span>
+      </button>
     </nav>
   </div>
 </header>
@@ -421,6 +523,47 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
+})();
+</script>
+<script>
+/* Theme engine: notebook is the default, a stored choice wins (the head
+   script already set data-theme before first paint). The toggle flips live;
+   with the view-transition API the new theme wipes in radially from the
+   toggle, otherwise the tonal CSS transitions carry it. */
+(function () {
+  "use strict";
+  var KEY = "emi-site-theme";
+  var root = document.documentElement;
+  var meta = document.querySelector('meta[name="theme-color"]');
+  var COLORS = { notebook: "#ece6d5", classic: "#FAF6EE" };
+  var btn = document.querySelector(".theme-toggle");
+  function current() { return root.getAttribute("data-theme") === "classic" ? "classic" : "notebook"; }
+  function apply(t) {
+    root.setAttribute("data-theme", t);
+    if (meta) meta.setAttribute("content", COLORS[t]);
+    if (btn) btn.setAttribute("aria-label", t === "classic" ? "Switch to notebook theme" : "Switch to classic theme");
+  }
+  function toggle() {
+    var next = current() === "classic" ? "notebook" : "classic";
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (btn) {
+      var r = btn.getBoundingClientRect();
+      root.style.setProperty("--tx", Math.round(r.left + r.width / 2) + "px");
+      root.style.setProperty("--ty", Math.round(r.top + r.height / 2) + "px");
+      btn.classList.toggle("is-flipped", next === "classic");
+    }
+    if (!reduced && document.startViewTransition) {
+      document.startViewTransition(function () { apply(next); });
+    } else {
+      apply(next);
+    }
+  }
+  if (btn) {
+    btn.classList.toggle("is-flipped", current() === "classic");
+    btn.addEventListener("click", toggle);
+  }
+  apply(current());
 })();
 </script>
 <script>
