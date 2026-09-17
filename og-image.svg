@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ece6d5"/>
+  <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#a59b87" stroke-width="2"/>
+  <text x="72" y="100" font-family="'Courier New', monospace" font-size="26" letter-spacing="7" fill="#5d574c">COMPUTER HELP</text>
+  <text x="68" y="235" font-family="Georgia, 'Times New Roman', serif" font-size="100" fill="#241f17">Unstuck</text>
+  <rect x="72" y="272" width="300" height="6" fill="#8c3f22"/>
+<text x="72" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#241f17">Computer help, in plain words.</text>
+  <text x="72" y="562" font-family="'Courier New', monospace" font-size="24" letter-spacing="2" fill="#5d574c">dillingerstaffing.github.io/unstuck</text>
+  <g transform="translate(900,185) scale(0.5078)"><path d="M156,112 H356 Q416,112 416,172 V300 Q416,360 356,360 H250 L152,432 L172,360 H156 Q96,360 96,300 V172 Q96,112 156,112 Z" fill="none" stroke="#241f17" stroke-width="26" stroke-linejoin="round"/><path d="M200,252 L244,296 L326,190" fill="none" stroke="#8c3f22" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
