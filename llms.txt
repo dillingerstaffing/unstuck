@@ -14,6 +14,7 @@ URL: https://dillingerstaffing.github.io/unstuck/
 - Wi-Fi: sorts out the router and the settings when the connection keeps dropping.
 - New computers: sets them up and moves everything over from the old one.
 - New phones: moves contacts, photos, and apps over and sets the phone up to work for the owner.
+- School laptops: sets up new school laptops (accounts, apps, backups, parental controls, printers).
 - Photos and files: backs them up so they are safe.
 - Suspicious email: checks whether it is a scam and says so directly.
 - After a loss: helps families open a loved one's phone or computer, save the photos, and close the accounts. Only with the family's permission.
