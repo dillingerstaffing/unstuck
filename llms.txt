@@ -15,6 +15,7 @@ URL: https://dillingerstaffing.github.io/unstuck/
 - New computers: sets them up and moves everything over from the old one.
 - Photos and files: backs them up so they are safe.
 - Suspicious email: checks whether it is a scam and says so directly.
+- After a loss: helps families open a loved one's phone or computer, save the photos, and close the accounts. Only with the family's permission.
 - Printers: fixes printers that will not print.
 - Anything else: the client describes it in their own words.
 
