@@ -12,6 +12,7 @@ URL: https://dillingerstaffing.github.io/unstuck/
 - Slow computers: finds what is slowing the computer down and removes it.
 - Pop-ups: removes them and stops them coming back.
 - Wi-Fi: sorts out the router and the settings when the connection keeps dropping.
+- Wi-Fi dead spots: maps where the signal dies, fixes the router placement, and sets up one well-placed extender so it reaches every room. The customer buys any hardware.
 - New computers: sets them up and moves everything over from the old one.
 - New phones: moves contacts, photos, and apps over and sets the phone up to work for the owner.
 - School laptops: sets up new school laptops (accounts, apps, backups, parental controls, printers).
