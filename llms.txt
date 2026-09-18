@@ -17,6 +17,7 @@ URL: https://dillingerstaffing.github.io/unstuck/
 - School laptops: sets up new school laptops (accounts, apps, backups, parental controls, printers).
 - Photos and files: backs them up so they are safe.
 - Suspicious email: send a screenshot and get a straight verdict on whether it is a scam. Flat fee, quoted before you pay.
+- Passwords: sets up one safe system for every login. The client types every password; nothing is kept.
 - After a loss: helps families open a loved one's phone or computer, save the photos, and close the accounts. Only with the family's permission.
 - Printers: fixes printers that will not print.
 - Anything else: the client describes it in their own words.
