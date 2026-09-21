@@ -3,7 +3,7 @@
 > Computer help in plain words, for people who don't speak computer.
 
 Unstuck is a one-person computer help service run by Chris Dillinger.
-The site is a business card: one page, plain language, one way to get help.
+The site is a business card: one page, plain language, one contact section with call, text, and email options.
 
 URL: https://dillingerstaffing.github.io/unstuck/
 
@@ -25,7 +25,7 @@ URL: https://dillingerstaffing.github.io/unstuck/
 
 ## How it works
 
-1. The client describes the problem in plain words by email. "It's slow" is enough.
+1. The client describes the problem in plain words by call, text, or email. "It's slow" is enough.
 2. Chris takes a look. Most things are fixed remotely.
 3. Fixed, then the client pays. One flat price per visit, quoted before work starts, unchanged after.
 
