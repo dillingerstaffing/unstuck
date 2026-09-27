@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="build-version" content="v20260927-unstuck-25">
+<meta name="build-version" content="v20260927-unstuck-26">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. Tell me what's wrong and I'll take it from there.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -351,6 +351,13 @@ body, .site-header, .btn, .fixes li, .steps li, .about .card, .contact-box, .sit
    ---- change to any element. ---------------------------------------------- */
 section.block { scroll-margin-top: 88px; }
 </style>
+<noscript><style>
+/* No-JavaScript fallback: the scroll reveal never runs, so show every
+   section; hide the three JS-driven email buttons (dead without JS) since
+   the plain mailto link below covers emailing. */
+.reveal{opacity:1!important;transform:none!important}
+#btn-gmail,#btn-mailapp,#btn-copy{display:none!important}
+</style></noscript>
 </head>
 <body>
 
@@ -473,6 +480,7 @@ section.block { scroll-margin-top: 88px; }
           <button class="btn btn-ghost" id="btn-gmail" type="button">Email with Gmail</button>
           <button class="btn btn-ghost" id="btn-mailapp" type="button">My email app</button>
           <button class="btn btn-ghost" id="btn-copy" type="button">Copy the address</button>
+          <noscript><a class="btn btn-ghost" href="mailto:shipthisgroup@gmail.com?subject=Computer%20help&amp;body=What%27s%20happening%20(plain%20words%20are%20fine)%3A%0A%0A">Email me</a></noscript>
         </div>
         <p class="contact-photo">Stuck for words? <a href="sms:+16095680485?body=Hi%2C%20here%20is%20a%20photo%20of%20what%20my%20computer%20is%20doing%3A%20">Text me a photo</a> of the error screen. The message opens with the first line already written.</p>
         <p class="contact-photo">After a loss? I help families save a loved one's photos and files, and close or hand over the accounts. Gentle work, and only with the family's permission.</p>
