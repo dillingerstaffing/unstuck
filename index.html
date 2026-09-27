@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="build-version" content="v20260925-unstuck-23">
+<meta name="build-version" content="v20260926-unstuck-24">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. Tell me what's wrong and I'll take it from there.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -325,6 +325,25 @@ body, .site-header, .btn, .fixes li, .steps li, .about .card, .contact-box, .sit
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
   .theme-toggle-mark { transition: none; }
 }
+
+/* ---- Sticky call bar: on small screens the primary action stays one tap ----
+   ---- away once the hero has scrolled off. Hidden again over #contact so ----
+   ---- it never doubles the chooser. New element only; existing styles are ----
+   ---- untouched. ----------------------------------------------------------- */
+.callbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  display: none;
+  justify-content: center;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+}
+.callbar.show { transform: translateY(0); }
+@media (max-width: 640px) { .callbar { display: flex; } }
+@media (prefers-reduced-motion: reduce) { .callbar { transition: none; } }
 </style>
 </head>
 <body>
@@ -608,6 +627,43 @@ body, .site-header, .btn, .fixes li, .steps li, .about .card, .contact-box, .sit
   // A fresh launch (the home-screen app) may never fire visibilitychange,
   // so check once shortly after load as well.
   setTimeout(checkBuild, 2500);
+})();
+</script>
+<div class="callbar" id="callbar" role="region" aria-label="Quick call">
+  <a class="btn btn-green btn-sm" href="tel:+16095680485">Call (609) 568-0485</a>
+</div>
+<script>
+/* Sticky call bar: show on small screens once the hero is fully scrolled
+   past, hide again while the contact section (with its own Call button) is
+   in view. Body bottom padding equals the bar height so the footer is never
+   covered. */
+(function () {
+  "use strict";
+  var bar = document.getElementById("callbar");
+  if (!bar) return;
+  var mq = window.matchMedia("(max-width: 640px)");
+  var heroGone = false, contactHere = false;
+  function update() {
+    var show = mq.matches && heroGone && !contactHere;
+    bar.classList.toggle("show", show);
+    document.body.style.paddingBottom = show ? bar.offsetHeight + "px" : "";
+  }
+  var hero = document.querySelector(".hero");
+  var contact = document.getElementById("contact");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.target === hero) heroGone = !en.isIntersecting;
+        if (en.target === contact) contactHere = en.isIntersecting;
+        update();
+      });
+    }, { threshold: 0 });
+    if (hero) io.observe(hero);
+    if (contact) io.observe(contact);
+  }
+  if (mq.addEventListener) mq.addEventListener("change", update);
+  window.addEventListener("resize", update);
+  update();
 })();
 </script>
 </body>
