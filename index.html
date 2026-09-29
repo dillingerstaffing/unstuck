@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" as="style">
-<meta name="build-version" content="v20260929-unstuck-32">
+<meta name="build-version" content="v20260929-unstuck-33">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. Tell me what's wrong and I'll take it from there.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -223,6 +223,15 @@ h2.section-title {
 .contact-photo { font-size: 0.95rem; color: var(--muted); margin: 0 0 8px; }
 .contact-photo a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .contact-photo a:hover { color: var(--green-deep); }
+/* The contact box's inline links (the photo-text link and the tap-to-call
+   number) are the page's smallest conversion-path targets (~18px tall). This
+   invisible hit area brings them to a 44px touch target with zero visual
+   change, the same pattern as the theme-toggle expansion. Vertical only:
+   both links are already far wider than 44px. */
+.contact-addr a, .contact-photo a { position: relative; }
+.contact-addr a::after, .contact-photo a::after {
+  content: ""; position: absolute; inset: -13px 0;
+}
 .contact-note.ok { color: var(--green-deep); font-weight: 700; }
 
 /* Footer */
