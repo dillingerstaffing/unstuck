@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" as="style">
-<meta name="build-version" content="v20260929-unstuck-30">
+<meta name="build-version" content="v20260929-unstuck-31">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. Tell me what's wrong and I'll take it from there.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -351,6 +351,19 @@ body, .site-header, .btn, .fixes li, .steps li, .about .card, .contact-box, .sit
    ---- of tucked beneath it. Scroll positioning only; no layout or visual ----
    ---- change to any element. ---------------------------------------------- */
 section.block { scroll-margin-top: 88px; }
+
+/* ---- Skip link: visually hidden until keyboard focus, then a fixed pill ----
+   ---- above the header. The first tab stop on the page, so keyboard and -----
+   ---- screen-reader visitors jump straight to the content. ---------------- */
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--ink); color: var(--paper);
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  padding: 10px 18px; border-radius: 8px;
+  transition: top 0.15s ease;
+}
+.skip-link:focus-visible { top: 12px; }
+@media (prefers-reduced-motion: reduce) { .skip-link { transition: none; } }
 </style>
 <noscript><style>
 /* No-JavaScript fallback: the scroll reveal never runs, so show every
@@ -361,6 +374,8 @@ section.block { scroll-margin-top: 88px; }
 </style></noscript>
 </head>
 <body>
+
+<a class="skip-link" href="#top">Skip to main content</a>
 
 <header class="site-header">
   <div class="wrap">
@@ -380,7 +395,7 @@ section.block { scroll-margin-top: 88px; }
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
   <section class="hero">
     <div class="wrap">
