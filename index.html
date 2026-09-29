@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" as="style">
-<meta name="build-version" content="v20260929-unstuck-29">
+<meta name="build-version" content="v20260929-unstuck-30">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. Tell me what's wrong and I'll take it from there.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -605,7 +605,10 @@ section.block { scroll-margin-top: 88px; }
     }
     if (!reduced && document.startViewTransition) {
       var vt = document.startViewTransition(function () { apply(next); });
-      if (vt && vt.finished && vt.finished.catch) vt.finished.catch(function () {});
+      if (vt) {
+        if (vt.finished && vt.finished.catch) vt.finished.catch(function () {});
+        if (vt.ready && vt.ready.catch) vt.ready.catch(function () {});
+      }
     } else {
       apply(next);
     }
