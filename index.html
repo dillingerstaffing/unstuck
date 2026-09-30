@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" as="style">
-<meta name="build-version" content="v20260930-unstuck-34">
+<meta name="build-version" content="v20260930-unstuck-35">
 <title>Unstuck: Computer Help, in Plain Words</title>
 <meta name="description" content="Stuck with your computer? Unstuck is computer help in plain words: slow computers, pop-ups, Wi-Fi, new setups, backups. Tell me what's wrong and I'll take it from there.">
 <link rel="canonical" href="https://dillingerstaffing.github.io/unstuck/">
@@ -135,14 +135,17 @@ body {
 .btn-sm { min-height: 42px; padding: 0 20px; font-size: 0.95rem; }
 /* The two persistent conversion CTAs render 42px tall (btn-sm), 2px under
    the 44px touch target: "Get help" in the sticky header and the call-bar
-   call button on small screens. This invisible hit area brings both to 44px
-   with zero visual change, the same pattern as the theme-toggle and
-   contact-link expansions. Vertical only: both buttons are far wider than
-   44px, and the header button sits 3px left of the toggle's own expanded
-   zone, so no zone overlaps anything. */
+   call button on small screens. This invisible hit area brings both to a
+   true 44px with zero visual change, the same pattern as the theme-toggle
+   and contact-link expansions. Vertical only: both buttons are far wider
+   than 44px, and the header button sits 3px left of the toggle's own
+   expanded zone, so no zone overlaps anything. Note: the buttons are
+   border-box with a 1px border, so the ::after sizes against the 40px
+   padding box; the inset is -2px (not -1px) to land a true 44px zone,
+   verified by probe on the live page. */
 .site-header .btn-sm, .callbar .btn-sm { position: relative; }
 .site-header .btn-sm::after, .callbar .btn-sm::after {
-  content: ""; position: absolute; inset: -1px 0;
+  content: ""; position: absolute; inset: -2px 0;
 }
 @media (max-width: 640px) { .site-nav a.nav-link { display: none; } }
 
