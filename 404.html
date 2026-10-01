@@ -53,6 +53,8 @@
   }
   .btn.solid { background: #8c3f22; color: #fdfaf1; }
   .btn.ghost { background: transparent; color: #8c3f22; }
+  button.btn { cursor: pointer; }
+  .copy-status { min-height: 18px; margin: 14px 0 0; font-size: 12px; letter-spacing: 0.04em; color: #5e5648; }
   .btn:focus-visible { outline: 2px solid #8c3f22; outline-offset: 3px; }
   .back {
     display: inline-block; margin-top: 20px; position: relative;
@@ -83,10 +85,37 @@
     <p class="lede">The address you tried does not exist on Unstuck. Nothing is wrong on your end.<br><span class="dim">If you need computer help, the fastest way to reach me is one tap away.</span></p>
     <div class="actions">
       <a class="btn solid" href="tel:+16095680485">CALL (609) 568-0485</a>
-      <a class="btn ghost" href="mailto:shipthisgroup@gmail.com?subject=Computer%20help&amp;body=What%27s%20happening%20(plain%20words%20are%20fine)%3A%0A%0A">EMAIL ME</a>
+      <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=shipthisgroup@gmail.com&amp;su=Computer%20help" target="_blank" rel="noopener">EMAIL VIA GMAIL</a>
+      <a class="btn ghost" href="mailto:shipthisgroup@gmail.com?subject=Computer%20help&amp;body=What%27s%20happening%20(plain%20words%20are%20fine)%3A%0A%0A">EMAIL VIA MY APP</a>
+      <button class="btn ghost" type="button" id="copyEmail">COPY EMAIL ADDRESS</button>
     </div>
+    <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
     <a class="back" href="https://dillingerstaffing.github.io/unstuck/">Back to the Unstuck home page</a>
     <p class="foot">UNSTUCK &middot; COMPUTER HELP, IN PLAIN WORDS</p>
   </main>
+<script>
+  (function () {
+    var btn = document.getElementById('copyEmail');
+    var status = document.getElementById('copyStatus');
+    var email = 'shipthisgroup@gmail.com';
+    function done() { status.textContent = 'Copied: ' + email; }
+    btn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done, function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) { status.textContent = email; }
+        document.body.removeChild(ta);
+      }
+    });
+  })();
+</script>
 </body>
 </html>
