@@ -27,7 +27,7 @@ URL: https://dillingerstaffing.github.io/unstuck/
 
 1. The client describes the problem in plain words by call, text, or email. "It's slow" is enough.
 2. Chris takes a look. Most things he can fix remotely, from his computer to the client's.
-3. Problem solved: the client describes what's wrong; most of it Chris fixes remotely, from his computer to the client's.
+3. Problem solved: it's fixed, the client sees it working, and Chris tells them what changed, in plain words.
 
 ## Contact
 
